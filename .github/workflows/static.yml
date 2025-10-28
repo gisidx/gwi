@@ -2,9 +2,10 @@
 name: Deploy to Pages
 
 on:
-  push:
-    branches: ["main"]
-    
+  workflow_run:
+    workflows: [Sync]
+    types:
+      - completed  
   workflow_dispatch:
 
 permissions:

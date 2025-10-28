@@ -3,9 +3,13 @@ name: Sync
 on:
   schedule:
     - cron: "0 21 * * 2" # every Tuesday at 21:00 UTC
-
+  push:
   workflow_dispatch: 
-
+  
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+  
 jobs:
   sync:
     runs-on: ubuntu-latest
