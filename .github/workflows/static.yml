@@ -5,10 +5,7 @@ on:
   push:
     paths:
       - 'simple/**'
-  workflow_run:
-    workflows: [Sync]
-    types:
-      - completed  
+      
   workflow_dispatch:
 
 permissions:
