@@ -131,7 +131,10 @@ def build_repo(packages: dict[str, list], pth="./simple"):
             f.write(
                 f"""
                   <hr>
-                  <a href="../index.html")">&larr; Back</a>
+                  <table width=100% border=0><tr>
+                    <td style="text-align:left;"><a href="../index.html")">&larr; Back</a></td>
+                    <td style="text-align:right;">Source: <a href="https://github.com/corbel-spatial/geospatial-wheels-index target="_new"">geospatial-wheels-index</a></td>
+                  </tr></table>
                   </body>
                 </html>
                 """
@@ -142,21 +145,23 @@ def build_repo(packages: dict[str, list], pth="./simple"):
         f.write(
             f"""
             <!DOCTYPE html>
-                <html>
-                  <body>
+            <html>
+              <body>
             """
         )
         f.write(
             """
-            <h1>Simple Index for <a href="https://github.com/cgohlke/geospatial-wheels">cgohlke/geospatial-wheels</a></h1>
-            <hr>
+                  <h1>Simple Index for <a href="https://github.com/cgohlke/geospatial-wheels" target="_new">cgohlke/geospatial-wheels</a></h1>
+                  <hr>
             """
         )
         f.write("<br/>".join(index_links))
         f.write(
             """
-              <hr>
-              Source: <a href="https://github.com/corbel-spatial/geospatial-wheels-index">geospatial-wheels-index</a>
+                <hr>
+                <table width=100% border=0><tr>
+                    <td style="text-align:right;">Source: <a href="https://github.com/corbel-spatial/geospatial-wheels-index target="_new"">geospatial-wheels-index</a></td>
+                </tr></table>
               </body>
             </html>
             """

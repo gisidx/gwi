@@ -9,7 +9,7 @@ git clone https://github.com/corbel-spatial/geospatial-wheels-index
 cd geospatial-wheels-index
 uv venv
 .venv\Scripts\activate
-uv pip install -e . --extras dev -r pyproject.toml
+uv pip install -e . --extra dev -r pyproject.toml
 uv sync --extra dev
 ```
 
@@ -17,6 +17,13 @@ To sync from the source repo:
 
 ```shell
 python sync.py
+```
+
+To lint:
+
+```shell
+black .
+ruff format
 ```
 
 To test locally:

@@ -10,21 +10,33 @@ pip install --index https://gisidx.github.io/gwi gdal
 ```
 
 Python 3.10 through 3.14 is supported on `win_arm64`, `win_amd64`, and `win32` architectures. 
-The full list of available packages is: 
+Packages available on this index: 
 
 - basemap
-- cartopy
+- Cartopy
 - cftime
-- fiona
-- gdal
+- Fiona
+- GDAL
 - h5py
-- netcdf4
+- netCDF4
 - pygeos
 - pyogrio
 - pyproj
 - rasterio
-- rtree
+- Rtree
 - shapely
+
+To install all packages, first install dependencies from PyPI:
+
+```shell
+pip install affine attrs certifi click click-plugins cligj basemap_data matplotlib numpy pyshp
+```
+
+Then install all packages from `cgohlke/geospatial-wheels` via this package index:
+
+```shell
+pip install --index https://gisidx.github.io/gwi basemap cartopy cftime fiona gdal h5py netcdf4 pygeos pyogrio pyproj rasterio rtree shapely
+```
 
 ### Notes
 
