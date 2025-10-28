@@ -160,7 +160,7 @@ def build_repo(packages: dict[str, list], pth="./simple"):
             """
                 <hr>
                 <table width=100% border=0><tr>
-                    <td style="text-align:right;">Source: <a href="https://github.com/corbel-spatial/geospatial-wheels-index target="_new"">geospatial-wheels-index</a></td>
+                    <td style="text-align:right;">Source: <a href="https://github.com/corbel-spatial/geospatial-wheels-index target="_new">geospatial-wheels-index</a></td>
                 </tr></table>
               </body>
             </html>
