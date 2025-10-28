@@ -6,7 +6,6 @@ import pandas as pd
 import semver
 from github import Github
 
-
 SRC_REPO = "cgohlke/geospatial-wheels"
 
 
@@ -114,19 +113,25 @@ def build_repo(packages: dict[str, list], pth="./simple"):
 
         os.mkdir(os.path.join(pth, name))
         print(os.path.join(pth, name))
-        
+
         with open(os.path.join(pth, name, "index.html"), "w") as f:
             print(os.path.join(pth, name, "index.html"))
             f.write(
-                f"""<!DOCTYPE html>
+                f"""
+                <!DOCTYPE html>
                     <html>
                       <body>
-                        <h1>Links for {name}</h1>"""
+                        <h1>{name}</h1>
+                        <hr>
+                """
             )
             for asset in packages[name]:
                 f.write(f'<a href="{asset}">{asset.split("/")[-1].lower()}</a><br/>')
+
             f.write(
-                """
+                f"""
+                  <hr>
+                  <a href="../index.html")">&larr; Back</a>
                   </body>
                 </html>
                 """
@@ -134,11 +139,28 @@ def build_repo(packages: dict[str, list], pth="./simple"):
 
     with open(os.path.join(pth, "index.html"), "w") as f:
         print(os.path.join(pth, "index.html"))
-        f.write("<!DOCTYPE html>")
         f.write(
-            '<h1>Simple Index for <a href="https://github.com/cgohlke/geospatial-wheels">cgohlke/geospatial-wheels</a></h1>'
+            f"""
+            <!DOCTYPE html>
+                <html>
+                  <body>
+            """
+        )
+        f.write(
+            """
+            <h1>Simple Index for <a href="https://github.com/cgohlke/geospatial-wheels">cgohlke/geospatial-wheels</a></h1>
+            <hr>
+            """
         )
         f.write("<br/>".join(index_links))
+        f.write(
+            """
+              <hr>
+              Source: <a href="https://github.com/corbel-spatial/geospatial-wheels-index">geospatial-wheels-index</a>
+              </body>
+            </html>
+            """
+        )
 
 
 if __name__ == "__main__":
