@@ -28,8 +28,10 @@ jobs:
       - name: Push changes
         continue-on-error: true
         run: |
-          git config --local user.email "dev@corbelspatial.com"
-          git config --local user.name "p-vdp"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add ./simple/*
           git commit -m "Sync index with repo"
           git push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
