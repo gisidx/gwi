@@ -6,7 +6,7 @@ which provides precompiled binary wheels for common geospatial Python libraries 
 Simply use `pip install` with the `--index` flag, for example to install `GDAL`:
 
 ```shell
-pip install --index https://tinyurl.com/gswhl gdal
+pip install --index https://gisidx.github.io/gwi gdal
 ```
 
 Python 3.10 through 3.14 is supported on `win_arm64`, `win_amd64`, and `win32` architectures. 
@@ -28,10 +28,12 @@ The full list of available packages is:
 
 ### Notes
 
-- The shortened URL https://tinyurl.com/gswhl resolves to the GitHub Pages site hosted by this repository: https://corbel-spatial.github.io/geospatial-wheels-index/
+- The index is hosted on this repository's GitHub Pages site: https://corbel-spatial.github.io/geospatial-wheels-index/
 
-- This index does not contain any actual wheel files; all links point to the GitHub-hosted assets in [releases](https://github.com/cgohlke/geospatial-wheels/releases)
-maintained in the `geospatial-wheels` repository.
+- For convenience, a [forked repository](https://github.com/gisidx/gwi) provides this shorter index URL: https://gisidx.github.io/gwi
+
+- The index does not contain any actual wheel files; all links point to the GitHub-hosted assets in [releases](https://github.com/cgohlke/geospatial-wheels/releases)
+maintained in the `cgohlke/geospatial-wheels` repository.
 
 - Like the `geospatial-wheels` source, this index is provided "as is" and without warranty of any kind. 
 
