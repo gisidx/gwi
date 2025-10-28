@@ -2,8 +2,9 @@
 name: Deploy to Pages
 
 on:
-  pull_request:
-    types: [closed]
+  push:
+    paths:
+      - './simple'
   workflow_run:
     workflows: [Sync]
     types:
@@ -17,7 +18,7 @@ permissions:
   
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
