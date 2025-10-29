@@ -8,4 +8,4 @@ dependencies = [
     "pygithub>=2.8.0",
     "semver>=3.0.0",
 ]
-optional-dependencies = {dev = ["black", "pandas-stubs", "ruff", "pytest", "uv"]}
+optional-dependencies = {dev = ["black", "myst-parser", "nbsphinx", "notebook", "pandas-stubs", "pydata-sphinx-theme", "pytest", "ruff", "sphinx", "sphinx-copybutton", "uv"]}
