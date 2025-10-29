@@ -101,7 +101,16 @@ def build_repo(packages: dict[str, list], pth="./simple"):
     print("Deleting", pth)
     if os.path.exists(pth):
         shutil.rmtree(pth)
+
+    print("Creating....")
+    print(pth)
     os.mkdir(pth)
+
+    with open(os.path.join(pth, "index.txt"), "w") as f:
+        print(os.path.join(pth, "index.txt"))
+        for name, urls in packages.items():
+            for url in urls:
+                f.write(url + "\n")
 
     with open(os.path.join(pth, "index.json"), "w") as f:
         print(os.path.join(pth, "index.json"))
