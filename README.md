@@ -47,6 +47,8 @@ pip install --index https://gisidx.github.io/gwi basemap cartopy cftime fiona gd
 - The index does not contain any actual wheel files; all links point to the GitHub-hosted assets in [releases](https://github.com/cgohlke/geospatial-wheels/releases)
 maintained in the `cgohlke/geospatial-wheels` repository.
 
+- The index automatically syncs with `cgohlke/geospatial-wheels` every Tuesday at 21:00 UTC. Please open an [Issue](https://github.com/corbel-spatial/geospatial-wheels-index/issues) if it's out of date.
+
 - Like the `geospatial-wheels` source, this index is provided "as is" and without warranty of any kind. 
 
 - All aspects of this index are open source and hosted in this repository.
