@@ -17,7 +17,7 @@ def get_packages() -> dict[str, list]:
     wheels = list()
 
     for release in releases:
-        tag = release.tag_name
+        # tag = release.tag_name
         assets = release.assets
         for asset in assets:
             whl_url = asset.browser_download_url
@@ -86,18 +86,18 @@ def get_packages() -> dict[str, list]:
     package_names = {pkg["distribution"].lower() for pkg in assets}
     package_names = sorted(list(package_names))
 
-    packages = dict()
+    pkgs = dict()
     for package in package_names:
-        if package not in packages:
-            packages[package] = list()
+        if package not in pkgs:
+            pkgs[package] = list()
         for asset in assets:
             if asset["distribution"].lower() == package.lower():
-                packages[package].append(asset["whl_url"])
+                pkgs[package].append(asset["whl_url"])
 
-    return packages
+    return pkgs
 
 
-def build_repo(packages: dict[str, list], pth="./simple"):
+def build_repo(pkgs: dict[str, list], pth="./simple"):
     print("Deleting", pth)
     if os.path.exists(pth):
         shutil.rmtree(pth)
@@ -108,16 +108,16 @@ def build_repo(packages: dict[str, list], pth="./simple"):
 
     with open(os.path.join(pth, "index.txt"), "w") as f:
         print(os.path.join(pth, "index.txt"))
-        for name, urls in packages.items():
+        for name, urls in pkgs.items():
             for url in urls:
                 f.write(url + "\n")
 
     with open(os.path.join(pth, "index.json"), "w") as f:
         print(os.path.join(pth, "index.json"))
-        json.dump(packages, f, indent=4)
+        json.dump(pkgs, f, indent=4)
 
     index_links = list()
-    for name in packages.keys():
+    for name in pkgs.keys():
         index_links.append(f'<a href="{name}/index.html">{name}</a>')
 
         os.mkdir(os.path.join(pth, name))
@@ -134,7 +134,7 @@ def build_repo(packages: dict[str, list], pth="./simple"):
                         <hr>
                 """
             )
-            for asset in packages[name]:
+            for asset in pkgs[name]:
                 f.write(f'<a href="{asset}">{asset.split("/")[-1].lower()}</a><br/>')
 
             f.write(
