@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Generate a pip simple index from cgohlke/geospatial-wheels"
 requires-python = ">=3.10"
 dependencies = [
-    "pandas>=2.3.0",
+    "pandas>=2.3.3",
     "pygithub>=2.8.0",
     "semver>=3.0.0",
 ]
