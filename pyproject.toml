@@ -6,6 +6,6 @@ requires-python = ">=3.10"
 dependencies = [
     "pandas>=2.3.0",
     "pygithub>=2.8.0",
-    "semver>=3.0.0",
+    "semver>=3.0.4",
 ]
 optional-dependencies = {dev = ["black", "myst-parser", "nbsphinx", "notebook", "pandas-stubs", "pydata-sphinx-theme", "pytest", "ruff", "sphinx", "sphinx-copybutton", "uv"]}
